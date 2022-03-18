@@ -30,7 +30,7 @@ int main(int argc, char **argv)
 	
 	ros::NodeHandle n;
 	
-	ros::Rate loop_rate(30); //10
+	ros::Rate loop_rate(1);
 	
 	ros::Subscriber sub = n.subscribe("range", 1000, UltraSonarCallback);
 	
