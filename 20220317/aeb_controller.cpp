@@ -33,10 +33,11 @@ int main(int argc, char **argv)
 	ros::Rate loop_rate(1);
 	
 	ros::Subscriber sub = n.subscribe("range", 1000, UltraSonarCallback);
+	ros::Publisher pub = n.advertise<std_msgs::Bool>("activation", 1000);
 	
 	while (ros::ok())
 	{
-		
+		pub.publish(flag_AEB);
 		loop_rate.sleep();
 		ros::spinOnce();
 		++count;
